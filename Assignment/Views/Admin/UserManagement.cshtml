@@ -1,0 +1,16 @@
+﻿@model AdminEditUserViewModel
+
+<section class="user-management">
+    <div class="container">
+        <h1>User List</h1>
+        <div class="users">
+            @foreach (var user in Model.Users)
+            {
+                <div>@user.FirstName @user.LastName @user.Email | <a asp-action="Edit" asp-route-id="@user.Id">Ändra</a></div>
+            }
+        </div>
+        <div>
+            <button class="btn-theme mt-3" onclick="location.href='@Url.Action("Index", "Account")'">Back</button>
+        </div>
+    </div>
+</section>

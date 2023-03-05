@@ -1,0 +1,46 @@
+﻿@model ContactForm
+@{
+
+    ViewData["Title"] = "Contact Us";
+    Layout = "~/Views/Shared/_Layout_CenterScreen.cshtml";
+}
+
+<section class="contact-form">
+    <div class="container">
+        <div class="logotype">
+            <a asp-controller="Contact" asp-action="Index">@ViewData["SiteName"]</a>
+        </div>
+
+        <h1>@ViewData["Title"]</h1>
+        <form method="post" asp-action="Contact" novalidate>
+            <div class="contact-form-error-summary">
+                <div asp-validation-summary="ModelOnly" class="error"></div>
+            </div>
+            <div class="contact-form-name">
+                <input asp-for="Name" placeholder="@Html.DisplayNameFor(m => m.Name)" />
+                <span asp-validation-for="Name" class="error"></span>
+            </div>
+            <div class="contact-form-email">
+                <input asp-for="Email" placeholder="@Html.DisplayNameFor(m => m.Email)" />
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+            <div class="contact-form-phone">
+                <input asp-for="PhoneNumber" placeholder="@Html.DisplayNameFor(m => m.PhoneNumber)" />
+                <span asp-validation-for="PhoneNumber" class="error"></span>
+            </div>
+            <div class="contact-form-company">
+                <input asp-for="Company" placeholder="@Html.DisplayNameFor(m => m.Company)" />
+                <span asp-validation-for="Company" class="error"></span>
+            </div>
+            <div class="contact-form-comments">
+                <input asp-for="WriteSomething" placeholder="@Html.DisplayNameFor(m => m.WriteSomething)" />
+                <span asp-validation-for="WriteSomething" class="error"></span>                
+            </div>           
+            <button onclick="window.open('mailto:store@bmerketo.com');" class="btn-theme mt-3" type="reset">Submit</button>
+        </form>
+    </div>
+    <div>
+        <iframe class="google-maps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1036915.469665086!2d18.2946751!3d59.496005450000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssv!2sse!4v1677756164604!5m2!1ssv!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+

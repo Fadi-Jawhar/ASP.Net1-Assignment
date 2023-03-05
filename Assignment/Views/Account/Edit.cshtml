@@ -1,0 +1,49 @@
+﻿@model UserEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ProfileEditForm</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Form.FirstName" class="control-label"></label>
+                <input asp-for="Form.FirstName" class="form-control" />
+                <span asp-validation-for="Form.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.LastName" class="control-label"></label>
+                <input asp-for="Form.LastName" class="form-control" />
+                <span asp-validation-for="Form.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.StreetName" class="control-label"></label>
+                <input asp-for="Form.StreetName" class="form-control" />
+                <span asp-validation-for="Form.StreetName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.PostalCode" class="control-label"></label>
+                <input asp-for="Form.PostalCode" class="form-control" />
+                <span asp-validation-for="Form.PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Form.City" class="control-label"></label>
+                <input asp-for="Form.City" class="form-control" />
+                <span asp-validation-for="Form.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn-theme mt-3" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <button class="btn-theme mt-3" onclick="location.href='@Url.Action("Index", "Account")'">Back</button>
+</div>

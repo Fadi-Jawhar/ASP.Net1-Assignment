@@ -1,0 +1,51 @@
+﻿@model ProductForm
+@{
+    ViewData["Title"] = "Add a Product";
+    Layout = "~/Views/Shared/_Layout_CenterScreen.cshtml";
+}
+<section class="registration-form">
+    <div class="container">
+        <div class="logotype">
+            <a asp-controller="Home" asp-action="Index">@ViewData["SiteName"]</a>
+        </div>
+        <h1>@ViewData["Title"]</h1>
+        <form method="post" asp-action="AddProduct" asp-route-ReturnUrl="@Model.ReturnUrl" novalidate enctype="multipart/form-data">
+            <div class="registration-form-error-summary">
+                <div asp-validation-summary="ModelOnly" class="error"></div>
+            </div>
+            <div class="registration-form-firstname">
+                <input asp-for="ArticleNumber" placeholder="@Html.DisplayNameFor(m => m.ArticleNumber)" />
+                <span asp-validation-for="ArticleNumber" class="error"></span>
+            </div>
+            <div class="registration-form-lastname">
+                <input asp-for="Name" placeholder="@Html.DisplayNameFor(m => m.Name)" />
+                <span asp-validation-for="Name" class="error"></span>
+            </div>
+            <div class="registration-form-email">
+                <input asp-for="Price" placeholder="@Html.DisplayNameFor(m => m.Price)" />
+                <span asp-validation-for="Price" class="error"></span>
+            </div>
+            <div class="registration-form-password">
+                <input asp-for="Category" placeholder="@Html.DisplayNameFor(m => m.Category)" />
+                <span asp-validation-for="Category" class="error"></span>
+            </div>
+            <div class="registration-form-confirmpassword">
+                <input asp-for="Rating" placeholder="@Html.DisplayNameFor(m => m.Rating)" />
+                <span asp-validation-for="Rating" class="error"></span>
+            </div>
+            <div class="registration-form-streetname mt-5">
+                <input asp-for="ProductDescription" placeholder="@Html.DisplayNameFor(m => m.ProductDescription)" />
+                <span asp-validation-for="ProductDescription" class="error"></span>
+            </div>
+            <div class="registration-form-postalcode">
+                <input asp-for="ProductDescriptionLong" placeholder="@Html.DisplayNameFor(m => m.ProductDescriptionLong)" />
+                <span asp-validation-for="ProductDescriptionLong" class="error"></span>
+            </div>
+            <div class="registration-form-profile-image">
+                <input asp-for="ProductImageName" placeholder="@Html.DisplayNameFor(m => m.ProductImageName)" accept="image/*" />
+                <span asp-validation-for="ProductImageName" class="error"></span>
+            </div>
+            <button class="btn-theme mt-3" type="submit">Add Product</button>
+        </form>
+    </div>
+</section>

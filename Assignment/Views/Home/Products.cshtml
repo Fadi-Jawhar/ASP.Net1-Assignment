@@ -1,0 +1,61 @@
+﻿@model ProductsViewModel
+@{
+    ViewData["Title"] = "Shop by Style";
+}
+@foreach (var product in Model.Products)
+{
+
+
+    <div class="product-card">
+        <div class="product-card-img">
+            @if (product != null)
+            {
+                <img src="~/images/products/@product.ProductImageName" alt="">
+            }
+            else
+            {
+                <img src="~/images/products/brown-watch.png" alt="">
+            }
+
+            <div class="product-card-menu">
+                <nav class="menu-icons">
+                    <a class="menu-link" href="#"><i class="fa-regular fa-code-compare"></i></a>
+                    <a class="menu-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                    <a class="menu-link" href="#"><i class="fa-regular fa-bag-shopping"></i></a>
+                </nav>
+                <a href="#" class="btn-theme">QUICK VIEW</a>
+            </div>
+
+
+        </div>
+        <div class="product-card-body">
+            @if (product != null)
+            {
+                <p class="product-card-category">@product.Category</p>
+                <p class="product-card-title">@product.Name</p>
+            }
+            else
+            {
+                <p class="product-card-category">Watches</p>
+                <p class="product-card-title">Modern Watch</p>
+            }
+
+            <div class="product-card-rating">
+                <i class="fa-solid fa-sharp fa-star"></i>
+                <i class="fa-solid fa-sharp fa-star"></i>
+                <i class="fa-solid fa-sharp fa-star"></i>
+                <i class="fa-solid fa-sharp fa-star"></i>
+                <i class="fa-solid fa-sharp fa-star"></i>
+            </div>
+            @if (product != null)
+            {
+                <p class="product-card-price">@product.Price</p>
+            }
+            else
+            {
+                <p class="product-card-price">$115.00</p>
+            }
+
+        </div>
+    </div>
+}

@@ -1,0 +1,33 @@
+﻿@model SignInForm
+@{
+    ViewData["Title"] = "Login to get Access";
+    Layout = "~/Views/Shared/_Layout_CenterScreen.cshtml";
+}
+
+
+<section class="login-form">
+    <div class="container">
+        <div class="logotype">
+            <a asp-controller="Home" asp-action="Index">@ViewData["SiteName"]</a>
+        </div>
+        <h1>@ViewData["Title"]</h1>
+        <form method="post" asp-action="SignIn" asp-route-ReturnUrl="@Model.ReturnUrl" novalidate>
+            <div class="login-form-error-summary">
+                <div asp-validation-summary="ModelOnly" class="error"></div>
+            </div>
+            <div class="login-form-email">
+                <input asp-for="Email" placeholder="@Html.DisplayNameFor(m => m.Email)" />
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+            <div class="login-form-password">
+                <input asp-for="Password" placeholder="@Html.DisplayNameFor(m => m.Password)" />
+                <span asp-validation-for="Password" class="error"></span>
+            </div>
+            <button class="btn-theme mt-2" type="submit">Submit</button>
+            <div class="login-form-link">
+                <span class="me-2">Don't have an Account yet?</span>
+                <a asp-action="SignUp">Register here</a>
+            </div>
+        </form>
+    </div>
+</section>

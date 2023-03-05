@@ -1,0 +1,36 @@
+﻿<header>
+    <div class="container">
+        <a class="logotype" asp-controller="Home" asp-action="Index">@ViewData["SiteName"] <img src="~/images/logo.svg" alt="" /></a>
+
+        <div id="menu" class="collapse">
+            <nav id="menu-links" class="menu-links">
+                <a class="menu-link" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="menu-link" asp-controller="Home" asp-action="Products">Products</a>
+                <a class="menu-link" asp-controller="Contacts" asp-action="Index">Contacts</a>
+            </nav>
+
+            <nav id="menu-icons" class="menu-icons">
+                <a class="menu-link" asp-controller="Products" asp-action="Search"><i class="fa-regular fa-search"></i></a>
+
+                <a class="menu-link" asp-controller="Products" asp-action="Compare">
+                    <i class="fa-regular fa-code-compare"></i>
+                    <span class="menu-badge">0</span>
+                </a>
+
+                <a class="menu-link" asp-controller="Shopping" asp-action="Index">
+                    <i class="fa-regular fa-bag-shopping"></i>
+                    <span class="menu-badge">0</span>
+                </a>
+
+                <a class="menu-link ms-5" asp-controller="Account" asp-action="Index"><i class="fa-regular fa-user"></i></a>
+            </nav>
+        </div>
+
+
+        <div id="toggle-icon" class="menu-icons">
+            <button class="menu-link" data-bs-toggle="collapse" data-bs-target="#menu">
+                <i class="fa-regular fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>

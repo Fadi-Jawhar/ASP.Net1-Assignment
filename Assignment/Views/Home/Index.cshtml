@@ -1,0 +1,280 @@
+﻿@model ProductsViewModel
+@{
+    ViewData["Title"] = "Shop by Style";
+}
+
+<!-- showcase -->
+<section class="showcase">
+    <div class="container">
+        <div class="column-1">
+            <div class="content">
+                <div class="title-2">GET UP TO 40% OFF</div>
+                <div class="title-1">Don't Miss This Opportunity</div>
+                <div class="title-3">Online shopping free home delivery over $100</div>
+                <a class="btn-theme" href="#">SHOP NOW</a>
+            </div>
+        </div>
+        <div class="column-2">
+            <img src="images/showcase-img.png" alt="showcase image">
+        </div>
+    </div>
+</section>
+
+
+<!-- featured products -->
+<section class="featured-products">
+    <div class="container">
+        <div class="title">Featured Products</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="~/images/products/blue-tshirt.png" alt="">
+                    <div class="product-card-menu">
+                        <nav class="menu-icons">
+                            <a class="menu-link" href="#"><i class="fa-regular fa-code-compare"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-bag-shopping"></i></a>
+                        </nav>
+                        <a href="#" class="btn-theme">QUICK VIEW</a>
+                    </div>
+
+
+                </div>
+                <div class="product-card-body">
+                    <p class="product-card-category">T-shirts</p>
+                    <p class="product-card-title">Blue Modern T-Shirt</p>
+                    <div class="product-card-rating">
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-regular fa-sharp fa-star"></i>
+                    </div>
+                    <p class="product-card-price">$15.00</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="~/images/products/black-white-set.png" alt="">
+                    <div class="product-card-menu">
+                        <nav class="menu-icons">
+                            <a class="menu-link" href="#"><i class="fa-regular fa-code-compare"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-bag-shopping"></i></a>
+                        </nav>
+                        <a href="#" class="btn-theme">QUICK VIEW</a>
+                    </div>
+
+
+                </div>
+                <div class="product-card-body">
+                    <p class="product-card-category">Sets</p>
+                    <p class="product-card-title">Black White Set</p>
+                    <div class="product-card-rating">
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-regular fa-sharp fa-star"></i>
+                    </div>
+                    <p class="product-card-price">$15.00</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="~/images/products/jeans-dress.png" alt="">
+                    <div class="product-card-menu">
+                        <nav class="menu-icons">
+                            <a class="menu-link" href="#"><i class="fa-regular fa-code-compare"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-bag-shopping"></i></a>
+                        </nav>
+                        <a href="#" class="btn-theme">QUICK VIEW</a>
+                    </div>
+
+
+                </div>
+                <div class="product-card-body">
+                    <p class="product-card-category">Dresses</p>
+                    <p class="product-card-title">Jenas Dress</p>
+                    <div class="product-card-rating">
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-regular fa-sharp fa-star"></i>
+                    </div>
+                    <p class="product-card-price">$15.00</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="~/images/products/black-dress.png" alt="">
+                    <div class="product-card-menu">
+                        <nav class="menu-icons">
+                            <a class="menu-link" href="#"><i class="fa-regular fa-code-compare"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-bag-shopping"></i></a>
+                        </nav>
+                        <a href="#" class="btn-theme">QUICK VIEW</a>
+                    </div>
+
+
+                </div>
+                <div class="product-card-body">
+                    <p class="product-card-category">Dresses</p>
+                    <p class="product-card-title">Black Dress</p>
+                    <div class="product-card-rating">
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-regular fa-sharp fa-star"></i>
+                    </div>
+                    <p class="product-card-price">$25.00</p>
+                </div>
+            </div>
+            @foreach (var product in Model.Products)
+            {
+                
+            
+            <div class="product-card">
+                <div class="product-card-img">
+                    @if (product != null){
+                            <img src="~/images/products/@product.ProductImageName" alt="">
+                    }
+                    else{
+                            <img src="~/images/products/brown-watch.png" alt="">
+                    }
+                    
+                    <div class="product-card-menu">
+                        <nav class="menu-icons">
+                            <a class="menu-link" href="#"><i class="fa-regular fa-code-compare"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-bag-shopping"></i></a>
+                        </nav>
+                        <a href="#" class="btn-theme">QUICK VIEW</a>
+                    </div>
+
+
+                </div>
+                <div class="product-card-body">
+                        @if (product != null)
+                        {
+                            <p class="product-card-category">@product.Category</p>
+                            <p class="product-card-title">@product.Name</p>
+                        }
+                        else
+                        {
+                            <p class="product-card-category">Watches</p>
+                            <p class="product-card-title">Modern Watch</p>
+                        }
+                    
+                    <div class="product-card-rating">
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                    </div>
+                        @if (product != null)
+                        {
+                            <p class="product-card-price">@product.Price</p>
+                        }
+                        else
+                        {
+                            <p class="product-card-price">$115.00</p>
+                        }
+                    
+                </div>
+            </div>
+            }
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="~/images/products/red-dress.png" alt="">
+                    <div class="product-card-menu">
+                        <nav class="menu-icons">
+                            <a class="menu-link" href="#"><i class="fa-regular fa-code-compare"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-bag-shopping"></i></a>
+                        </nav>
+                        <a href="#" class="btn-theme">QUICK VIEW</a>
+                    </div>
+
+
+                </div>
+                <div class="product-card-body">
+                    <p class="product-card-category">Dresses</p>
+                    <p class="product-card-title">Red Dress</p>
+                    <div class="product-card-rating">
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-regular fa-sharp fa-star"></i>
+                    </div>
+                    <p class="product-card-price">$35.00</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="~/images/products/red-bag.png" alt="">
+                    <div class="product-card-menu">
+                        <nav class="menu-icons">
+                            <a class="menu-link" href="#"><i class="fa-regular fa-code-compare"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-bag-shopping"></i></a>
+                        </nav>
+                        <a href="#" class="btn-theme">QUICK VIEW</a>
+                    </div>
+
+
+                </div>
+                <div class="product-card-body">
+                    <p class="product-card-category">Bags</p>
+                    <p class="product-card-title">Red Hand Bag</p>
+                    <div class="product-card-rating">
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-regular fa-sharp fa-star"></i>
+                    </div>
+                    <p class="product-card-price">$215.00</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="~/images/products/chrome-shoe.png" alt="">
+                    <div class="product-card-menu">
+                        <nav class="menu-icons">
+                            <a class="menu-link" href="#"><i class="fa-regular fa-code-compare"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-heart"></i></a>
+                            <a class="menu-link" href="#"><i class="fa-regular fa-bag-shopping"></i></a>
+                        </nav>
+                        <a href="#" class="btn-theme">QUICK VIEW</a>
+                    </div>
+
+
+                </div>
+                <div class="product-card-body">
+                    <p class="product-card-category">Shoes</p>
+                    <p class="product-card-title">Chome Shoe</p>
+                    <div class="product-card-rating">
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-solid fa-sharp fa-star"></i>
+                        <i class="fa-regular fa-sharp fa-star"></i>
+                    </div>
+                    <p class="product-card-price">$15.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
